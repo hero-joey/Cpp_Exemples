@@ -1,4 +1,4 @@
-﻿// InitializerList.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
+// InitializerList.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
 //
 
 #include <iostream>
@@ -12,17 +12,17 @@ class Foo
 public:
     Foo(std::initializer_list<int>)
     {
-	    
+
     }
 
     Foo(int a)
     {
-	    
+
     }
 private:
     Foo(const Foo& foo)
     {
-	    
+
     }
 };
 
@@ -49,10 +49,10 @@ class FooVector
 public:
     FooVector(std::initializer_list<int> list)
     {
-	    for (auto& it : list)
-	    {
+        for (auto& it : list)
+        {
             m_content.push_back(it);
-	    }
+        }
     }
 };
 
@@ -97,7 +97,7 @@ int main()
 
     int arr[3]{ 1, 2, 3 };  //普通数组
     int* a2 = new int { 123 };    //指针a2, 列表初始化
-    double b = double {12.12 };   //匿名对象使用初始化列表
+    auto b = double {12.12 };   //匿名对象使用初始化列表
     int* pArr = new int[3] {1, 2, 3};  //堆元素初始化列表
 
     std::map<std::string, int> map1{ {"1", 1}, {"2", 2}, {"3", 3} };
@@ -117,7 +117,7 @@ int main()
     list = { 3, 1, 2, 4 };
     std::cout << list.size() << std::endl;
 
-	//initializer_list内部并不保存初始化列表元素的拷贝, 仅仅存储了列表元素的引用而已
+    //initializer_list内部并不保存初始化列表元素的拷贝, 仅仅存储了列表元素的引用而已
     //错误例程
     std::initializer_list<int> wrongAddr = GetInitializerList();
     std::cout << wrongAddr.size() << std::endl;

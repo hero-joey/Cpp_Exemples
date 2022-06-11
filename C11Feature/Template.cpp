@@ -1,4 +1,4 @@
-﻿// C11_Feature.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
+// C11_Feature.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
 //
 
 #include <iostream>
@@ -21,12 +21,14 @@ void f(T... args)
 template<typename T, typename T1, typename T2>
 void print(T t, T1 t1, T2 t2)
 {
+    cout << "three param" << endl;
     cout << t << " " << t1 << " " << t2 << endl;
 }
 
 template<typename T, typename T1>
 void print(T t, T1 t1)
 {
+    cout << "two param" << endl;
     cout << t << " " << t1 << endl;
 }
 
@@ -34,6 +36,7 @@ void print(T t, T1 t1)
 template<typename T,  typename ...Args>
 void print(T t, Args... rest)
 {
+    cout << "many param" << endl;
     cout << "Head: " << t << endl;
     print(rest...);
 }
